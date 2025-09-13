@@ -36,7 +36,10 @@ while (true)
             case "/":
                 Console.WriteLine("Введите число");
                 number = Convert.ToDouble(Console.ReadLine());
-                cur = cur / number;
+                if (number == 0)
+                    Console.WriteLine("ОШИБКА: деление на ноль");
+                else
+                    cur = cur / number;
                 break;
             case "%":
                 Console.WriteLine("Введите число");
@@ -71,7 +74,7 @@ while (true)
                 Console.WriteLine($"Значение в памяти: {memory}");
                 break;
             default:
-                Console.WriteLine($"Неизвестная операция");
+                Console.WriteLine("Неизвестная операция");
                 break;
         }
     }
